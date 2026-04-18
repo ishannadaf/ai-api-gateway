@@ -21,7 +21,7 @@ function App() {
       setError("");
       setData([]);
 
-      const res = await axios.post(`${BASE_URL}/preview`, null, {
+      const res = await axios.post(`${BASE_URL}preview`, null, {
         params: { query }
       });
 
@@ -40,7 +40,7 @@ function App() {
       setExecuteLoading(true);
       setError("");
 
-      const res = await axios.post(`${BASE_URL}/execute`, {
+      const res = await axios.post(`${BASE_URL}execute`, {
         sql: sql
       });
 
