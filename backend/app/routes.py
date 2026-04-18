@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from app.db import SessionLocal
-from app.llm import generate_sql, explain_sql
+from .db import SessionLocal
+from .llm import generate_sql, explain_sql
 from sqlalchemy import text
 from pydantic import BaseModel
 
