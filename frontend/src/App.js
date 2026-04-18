@@ -13,6 +13,7 @@ function App() {
   const [explanation, setExplanation] = useState("");
   const [previewLoading, setPreviewLoading] = useState(false);
   const [executeLoading, setExecuteLoading] = useState(false);
+  const BASE_URL = "https://ai-api-gateway-production-2c6c.up.railway.app/";
 
   const handlePreview = async () => {
     try {
@@ -20,7 +21,7 @@ function App() {
       setError("");
       setData([]);
 
-      const res = await axios.post("http://127.0.0.1:8000/preview", null, {
+      const res = await axios.post(`${BASE_URL}/preview`, null, {
         params: { query }
       });
 
@@ -39,7 +40,7 @@ function App() {
       setExecuteLoading(true);
       setError("");
 
-      const res = await axios.post("http://127.0.0.1:8000/execute", {
+      const res = await axios.post(`${BASE_URL}/execute`, {
         sql: sql
       });
 
